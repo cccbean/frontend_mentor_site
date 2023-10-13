@@ -1,0 +1,97 @@
+---
+import starIcon from '../assets/icon-star.svg'
+import thankYouImg from '../assets/illustration-thank-you.svg'
+---
+
+<div class="flex flex-grow items-center justify-center bg-gray-900 p-2">
+	<div class="rate-card grid max-w-sm gap-4 rounded-2xl bg-gray-800 p-8 text-white">
+		<div class="grid aspect-square w-12 place-items-center rounded-full bg-gray-700 p-2">
+			<img src={starIcon.src} alt="" />
+		</div>
+		<h3 class="text-2xl font-bold">How did we do?</h3>
+		<p class="mb-4 text-gray-400">
+			Please let us know how we did with your support request. All feedback is appreciated to help
+			us improve our offering!
+		</p>
+		<div class="btns mb-2 flex justify-around">
+			<button
+				class="aspect-square w-12 rounded-full bg-gray-700 p-2 text-gray-400 hover:bg-orange-500 hover:text-white"
+				>1</button
+			>
+			<button
+				class="aspect-square w-12 rounded-full bg-gray-700 p-2 text-gray-400 hover:bg-orange-500 hover:text-white"
+				>2</button
+			>
+			<button
+				class="aspect-square w-12 rounded-full bg-gray-700 p-2 text-gray-400 hover:bg-orange-500 hover:text-white"
+				>3</button
+			>
+			<button
+				class="aspect-square w-12 rounded-full bg-gray-700 p-2 text-gray-400 hover:bg-orange-500 hover:text-white"
+				>4</button
+			>
+			<button
+				class="aspect-square w-12 rounded-full bg-gray-700 p-2 text-gray-400 hover:bg-orange-500 hover:text-white"
+				>5</button
+			>
+		</div>
+		<button
+			class="submit rounded-full bg-orange-500 p-4 font-bold tracking-widest text-gray-200 hover:bg-white hover:text-orange-500"
+			>SUBMIT</button
+		>
+	</div>
+
+	<div
+		class="thank-you-card hidden max-w-sm place-items-center gap-4 rounded-2xl bg-gray-800 px-6 py-10 text-white"
+	>
+		<img src={thankYouImg.src} alt="" />
+		<div class="selection mb-4 mt-2 rounded-full bg-gray-700 px-3 py-2 text-orange-400">
+			You selected 4 out of 5
+		</div>
+		<h3 class="text-2xl font-bold">Thank you!</h3>
+		<p class="text-center text-gray-400">
+			We appreciate you taking the time to give a rating. If you ever need more support, don't
+			hesitate to get in touch!
+		</p>
+	</div>
+</div>
+
+<script>
+	const btns = document.querySelectorAll('.btns button')
+	btns.forEach((button) => {
+		button.addEventListener('click', () => {
+			btns.forEach((btn) => {
+				if (button !== btn) {
+					btn.classList.remove('bg-gray-400')
+					btn.classList.remove('text-white')
+				}
+			})
+			button.classList.remove('bg-gray-700')
+			button.classList.add('bg-gray-400')
+			button.classList.add('text-white')
+		})
+	})
+
+	const submitBtn = document.querySelector('.submit')
+	const selectionDiv = document.querySelector('.selection')
+	const rateCard = document.querySelector('.rate-card')
+	const thankYouCard = document.querySelector('.thank-you-card')
+	submitBtn?.addEventListener('click', () => {
+		let rating: string | null = '0'
+		btns.forEach((button) => {
+			if (button.classList.contains('bg-gray-400')) {
+				rating = button.textContent
+			}
+		})
+
+		if (rating === '0' || rating === null) {
+			alert('Please choose a rating before submitting.')
+		} else {
+			selectionDiv!.textContent = `You selected ${rating} out of 5`
+			rateCard?.classList.remove('grid')
+			rateCard?.classList.add('hidden')
+			thankYouCard?.classList.remove('hidden')
+			thankYouCard?.classList.add('grid')
+		}
+	})
+</script>

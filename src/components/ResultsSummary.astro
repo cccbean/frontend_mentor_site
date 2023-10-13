@@ -1,0 +1,74 @@
+---
+import reactionIcon from '../assets/icon-reaction.svg'
+import memoryIcon from '../assets/icon-memory.svg'
+import verbalIcon from '../assets/icon-verbal.svg'
+import visualIcon from '../assets/icon-visual.svg'
+---
+
+<div class="grid flex-grow place-items-center bg-gray-100 p-2">
+	<div
+		class="max-w-sm bg-white md:grid md:max-w-2xl md:grid-cols-2 md:overflow-hidden md:rounded-3xl md:shadow-lg md:shadow-blue-200"
+	>
+		<div
+			class="flex flex-col items-center gap-4 rounded-b-3xl bg-gradient-to-b from-blue-500 to-blue-800 px-12 py-8 text-gray-300 md:rounded-3xl"
+		>
+			<h2>Your Result</h2>
+			<div
+				class="flex h-32 w-32 flex-col items-center justify-center rounded-full bg-gradient-to-b from-blue-800 to-blue-500 p-4"
+			>
+				<span class="text-5xl font-bold text-white">76</span>
+				 of 100
+			</div>
+			<h3 class="text-2xl font-bold text-white">Great</h3>
+			<p class="text-center">You scored higher than 65% of the people who have taken these tests</p>
+		</div>
+		<div class="grid gap-4 p-6">
+			<h3 class="text-lg font-bold text-gray-600">Summary</h3>
+			<div class="flex items-center justify-between rounded-2xl bg-red-50 p-4">
+				<div class="flex gap-4 font-bold text-red-400">
+					<img src={reactionIcon.src} alt="" />
+					<p>Reaction</p>
+				</div>
+				<div class="text-gray-400">
+					<span class="font-bold text-gray-600">80</span>
+					 &nbsp;/ 100
+				</div>
+			</div>
+			<div class="flex items-center justify-between rounded-2xl bg-yellow-50 p-4">
+				<div class="flex gap-4 font-bold text-yellow-400">
+					<img src={memoryIcon.src} alt="" />
+					<p>Memory</p>
+				</div>
+				<div class="text-gray-400">
+					<span class="font-bold text-gray-600">92</span>
+					 &nbsp;/ 100
+				</div>
+			</div>
+			<div class="flex items-center justify-between rounded-2xl bg-green-50 p-4">
+				<div class="flex gap-4 font-bold text-green-400">
+					<img src={verbalIcon.src} alt="" />
+
+					<p>Verbal</p>
+				</div>
+				<div class="text-gray-400">
+					<span class="font-bold text-gray-600">61</span>
+					 &nbsp;/ 100
+				</div>
+			</div>
+			<div class="flex items-center justify-between rounded-2xl bg-purple-50 p-4">
+				<div class="flex gap-4 font-bold text-blue-600">
+					<img src={visualIcon.src} alt="" />
+					<p>Visual</p>
+				</div>
+				<div class="text-gray-400">
+					<span class="font-bold text-gray-600">72</span>
+					 &nbsp;/ 100
+				</div>
+			</div>
+			<button
+				class="rounded-full bg-blue-900 p-4 font-bold text-white hover:bg-gradient-to-b hover:from-blue-500 hover:to-blue-900"
+				>Continue</button
+			>
+		</div>
+	</div>
+</div>
