@@ -1,0 +1,130 @@
+---
+import mobileSvg from '../assets/illustration-woman-online-mobile.svg';
+import arrowSvg from '../assets/icon-arrow-down.svg';
+import bgPatternMobileSvg from '../assets/bg-pattern-mobile.svg';
+import illustrationSvg from '../assets/illustration-woman-online-desktop.svg';
+import boxSvg from '../assets/illustration-box-desktop.svg';
+import bgPatternDesktopSvg from '../assets/bg-pattern-desktop.svg';
+---
+
+<div
+	class="relative grid flex-grow place-items-center bg-gradient-to-b from-purple-500 from-30% to-blue-600 p-2"
+>
+	<div class="font-kumbh-sans relative w-96 rounded-3xl bg-white md:flex md:w-max">
+		<img
+			class="absolute left-1/2 top-0 w-2/3 translate-x-[-50%] translate-y-[-59%] md:hidden"
+			src={mobileSvg.src}
+			alt=""
+		/>
+		<img
+			class="absolute left-1/2 top-0 w-2/3 translate-x-[-50%] translate-y-1 md:hidden"
+			src={bgPatternMobileSvg.src}
+			alt=""
+		/>
+		<div class="relative hidden w-96 flex-1 md:block">
+			<img
+				class="absolute left-[-2rem] top-1/2 translate-y-[-50%] scale-125"
+				src={illustrationSvg.src}
+				alt=""
+			/>
+			<img class="absolute left-[-6.5rem] top-1/2 translate-y-[-30%]" src={boxSvg.src} alt="" />
+			<img
+				class="absolute left-[-2rem] top-1/2 translate-y-[-50%] scale-125"
+				src={bgPatternDesktopSvg.src}
+				alt=""
+			/>
+		</div>
+		<div class="flex flex-1 flex-col gap-4 px-6 py-12 text-gray-600 md:px-24 md:pb-24 md:pt-20">
+			<h3 class="pb-6 pt-24 text-center text-4xl font-bold text-gray-900 md:pt-0 md:text-left">
+				FAQ
+			</h3>
+			<details>
+				<summary class="cursor-pointer list-none hover:text-orange-500">
+					<div class="flex items-center justify-between gap-4">
+						<p>How many team members can I invite?</p>
+						<img class="h-2 w-3" src={arrowSvg.src} alt="" />
+					</div>
+				</summary>
+				<p class="mt-2 text-sm text-gray-500">As many as you want! Bring the world with you.</p>
+			</details>
+			<hr />
+			<details>
+				<summary class="cursor-pointer list-none hover:text-orange-500">
+					<div class="flex items-center justify-between gap-4">
+						<p>What is the maximum file upload size?</p>
+						<img class="h-2 w-3" src={arrowSvg.src} alt="" />
+					</div>
+				</summary>
+				<p class="mt-2 text-sm text-gray-500">
+					No more than 2GB. All files in your account must fit your allotted storage space.
+				</p>
+			</details>
+			<hr />
+			<details>
+				<summary class="cursor-pointer list-none hover:text-orange-500">
+					<div class="flex items-center justify-between gap-4">
+						<p>How do I reset my password?</p>
+						<img class="h-2 w-3" src={arrowSvg.src} alt="" />
+					</div>
+				</summary>
+				<p class="mt-2 text-sm text-gray-500">
+					Click the reset password button on the login screen.
+				</p>
+			</details>
+			<hr />
+			<details>
+				<summary class="cursor-pointer list-none hover:text-orange-500">
+					<div class="flex items-center justify-between gap-4">
+						<p>Can I cancel my subscription?</p>
+						<img class="h-2 w-3" src={arrowSvg.src} alt="" />
+					</div>
+				</summary>
+				<p class="mt-2 text-sm text-gray-500">
+					Of course. Once logged in, go to your account settings and find the 'Cancel Subscription'
+					option.
+				</p>
+			</details>
+			<hr />
+			<details>
+				<summary class="cursor-pointer list-none hover:text-orange-500">
+					<div class="flex items-center justify-between gap-4">
+						<p>Do you provide additional support?</p>
+						<img class="h-2 w-3" src={arrowSvg.src} alt="" />
+					</div>
+				</summary>
+				<p class="mt-2 text-sm text-gray-500">
+					Yes, for additional customer support, please contact (555) 555-5555
+				</p>
+			</details>
+			<hr />
+		</div>
+	</div>
+</div>
+
+<script>
+	const accordions = document.querySelectorAll('details');
+
+	accordions.forEach((accordion) => {
+		accordion.addEventListener('toggle', () => {
+			const header = accordion.querySelector('p');
+			const arrow = accordion.querySelector('img');
+
+			if (accordion.open) {
+				header?.classList.add('text-gray-900');
+				header?.classList.add('font-bold');
+				header?.classList.add('hover:text-orange-600');
+				arrow?.classList.add('rotate-180');
+
+				// accordions.forEach((otherAccordion) => {
+				// 	if (otherAccordion !== accordion) {
+				// 		otherAccordion.open = false
+				// 	}
+				// })
+			} else {
+				header?.classList.remove('text-gray-900');
+				header?.classList.remove('font-bold');
+				arrow?.classList.remove('rotate-180');
+			}
+		});
+	});
+</script>

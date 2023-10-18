@@ -7,6 +7,11 @@ export default {
 				mont: ['Montserrat', 'sans-serif'],
 				fraun: ['Fraunces', 'serif'],
 				outfit: ['Outfit', 'sans-serif'],
+				'red-hat': ['Red Hat Display', 'sans-serif'],
+				inter: ['Inter', 'sans-serif'],
+				'lexend-deca': ['Lexend Deca', 'sans-serif'],
+				'big-shoulder': ['Big Shoulders Display', 'sans-serif'],
+				'kumbh-sans': ['Kumnh Sans', 'sans-serif'],
 			}
 		},
 	},

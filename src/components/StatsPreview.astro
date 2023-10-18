@@ -1,0 +1,37 @@
+---
+import imageHeaderMobile from '../assets/image-header-mobile.jpg'
+import imageHeaderDesktop from '../assets/image-header-desktop.jpg'
+---
+
+<div class="grid flex-grow place-items-center bg-gray-900 p-2">
+	<div class="font-inter max-w-sm overflow-hidden rounded-xl bg-gray-800 text-gray-400 md:max-w-6xl md:flex md:flex-row-reverse">
+		<div class="relative md:flex-1">
+			<img class="md:hidden" src={imageHeaderMobile.src} alt="" />
+            <img class='hidden md:block w-full h-full' src={imageHeaderDesktop.src} alt="">
+			<div class="absolute top-0 h-full w-full bg-purple-900 bg-opacity-60"></div>
+		</div>
+		<div class="flex flex-col gap-4 px-12 py-8 text-center md:text-left md:flex-1 md:p-16 md:justify-between">
+			<h3 class="text-3xl font-bold text-white md:text-4xl md:pr-16">
+				Get <span class="text-purple-500">insights</span> that help your business grow.
+			</h3>
+			<p class="mb-4 leading-relaxed md:mb-12 md:pr-24">
+				Discover the benefits of data analytics and make better decisions regarding revenue,
+				customer experience, and overall efficiency.
+			</p>
+			<div class="flex flex-col gap-6 md:flex-row md:gap-16">
+				<div class="flex flex-col gap-1">
+					<p class="text-2xl font-bold text-white">10k+</p>
+					<p class="font-lexend-deca text-sm tracking-wider">COMPANIES</p>
+				</div>
+				<div class="flex flex-col gap-1">
+					<p class="text-2xl font-bold text-white">314</p>
+					<p class="font-lexend-deca text-sm tracking-wider">TEMPLATES</p>
+				</div>
+				<div class="flex flex-col gap-1">
+					<p class="text-2xl font-bold text-white">12M+</p>
+					<p class="font-lexend-deca text-sm tracking-wider">QUERIES</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

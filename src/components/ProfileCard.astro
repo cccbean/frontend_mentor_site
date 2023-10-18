@@ -1,0 +1,34 @@
+---
+import profilePic from '../assets/image-victor.jpg'
+import backgroundSvg from '../assets/bg-pattern-card.svg'
+---
+
+<div class="grid flex-grow place-items-center bg-blue-50">
+	<div class="max-w-sm overflow-hidden rounded-xl bg-white font-kumbh-sans">
+		<div class="relative">
+			<img src={backgroundSvg.src} alt="" />
+			<img class="w-32 rounded-full border-[6px] border-white absolute bottom-[-4rem] left-1/2 translate-x-[-50%]" src={profilePic.src} alt="" />
+		</div>
+		<div class="text-gray-500">
+			<div class="pb-6 text-center pt-20 flex flex-col gap-2">
+				<p class="text-xl"><span class="font-bold text-gray-900">Victor Crest</span> &nbsp;26</p>
+				<p>London</p>
+			</div>
+			<hr class="border-gray-200" />
+			<div class="flex gap-8 px-12 py-6">
+				<div class="flex flex-col items-center gap-1">
+					<p class="font-bold text-gray-900 text-xl">80K</p>
+					<p class="text-xs tracking-widest">Followers</p>
+				</div>
+				<div class="flex flex-col items-center gap-1">
+					<p class="font-bold text-gray-900 text-xl">803K</p>
+					<p class="text-xs tracking-widest">Likes</p>
+				</div>
+				<div class="flex flex-col items-center gap-1">
+					<p class="font-bold text-gray-900 text-xl">1.4K</p>
+					<p class="text-xs tracking-widest">Photos</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
