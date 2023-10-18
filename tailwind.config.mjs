@@ -12,8 +12,9 @@ export default {
 				'lexend-deca': ['Lexend Deca', 'sans-serif'],
 				'big-shoulder': ['Big Shoulders Display', 'sans-serif'],
 				'kumbh-sans': ['Kumnh Sans', 'sans-serif'],
+				'leage-spartan': ['League Spartan', 'sans-serif']
 			}
-		},
+		}
 	},
-	plugins: [],
-}
+	plugins: []
+};
