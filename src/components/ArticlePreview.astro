@@ -1,0 +1,111 @@
+---
+import drawersImg from '../assets/drawers.jpg';
+import michelleImg from '../assets/avatar-michelle.jpg';
+import shareSvg from '../assets/icon-share.svg';
+import whiteShareSvg from '../assets/icon-share-white.svg';
+import facebookSvg from '../assets/icon-facebook.svg';
+import twitterSvg from '../assets/icon-twitter.svg';
+import pinterestSvg from '../assets/icon-pinterest.svg';
+---
+
+<div class="flex flex-grow items-center justify-center bg-blue-50 p-2">
+	<div class="font-manrope max-w-sm rounded-2xl bg-white text-gray-500 md:flex md:max-w-4xl">
+		<img
+			class="h-64 w-full rounded-t-2xl object-cover object-top md:h-auto md:w-1/3 md:rounded-l-2xl md:rounded-tr-none md:object-left"
+			src={drawersImg.src}
+			alt=""
+		/>
+		<div class="md:p-4">
+			<div class="flex flex-col gap-4 px-8 pb-6 pt-12">
+				<h3 class="text-xl font-bold text-gray-700 md:text-3xl">
+					Shift the overall look and feel by adding these wonderful touches to furniture in your
+					home
+				</h3>
+				<p class="leading-relaxed">
+					Ever been in a room and felt like something was missing? Perhaps it felt slightly bare and
+					uninviting. I've got some simple tips to help you make any room feel complete.
+				</p>
+			</div>
+			<div>
+				<div class="default relative flex h-20 items-center justify-between px-8 py-4 md:pb-8">
+					<div class="flex gap-4">
+						<img class="w-12 rounded-full" src={michelleImg.src} alt="" />
+						<div>
+							<p class="font-bold text-gray-700">Michelle Appleton</p>
+							<p class="text-gray-400">28 Jun 2020</p>
+						</div>
+					</div>
+					<button class="rounded-full bg-gray-100 p-3">
+						<img class="w-4" src={shareSvg.src} alt="" />
+					</button>
+					<div
+						class="popup absolute right-0 top-[-100%] flex hidden translate-x-[26%] items-center gap-4 rounded-2xl bg-gray-600 p-4"
+					>
+						<p class="pr-2 text-gray-400">S H A R E</p>
+						<a href=""><img class="w-6" src={facebookSvg.src} alt="" /></a>
+						<a href=""><img class="w-6" src={twitterSvg.src} alt="" /></a>
+						<a href=""><img class="w-6" src={pinterestSvg.src} alt="" /></a>
+					</div>
+					<div
+						class="popup absolute right-0 top-[-40%] hidden h-4 w-4 translate-x-[-280%] rotate-45 bg-gray-600"
+					>
+					</div>
+				</div>
+				<div
+					class="share hidden h-20 items-center justify-between rounded-b-2xl bg-gray-600 px-8 py-4"
+				>
+					<div class="flex items-center gap-4">
+						<p class="pr-2 text-gray-400">S H A R E</p>
+						<a href=""><img class="w-6" src={facebookSvg.src} alt="" /></a>
+						<a href=""><img class="w-6" src={twitterSvg.src} alt="" /></a>
+						<a href=""><img class="w-6" src={pinterestSvg.src} alt="" /></a>
+					</div>
+					<button class="rounded-full bg-gray-500 p-3"
+						><img class="w-4" src={whiteShareSvg.src} alt="" /></button
+					>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	const buttons = document.querySelectorAll('button');
+	const def = document.querySelector('.default');
+	const share = document.querySelector('.share');
+	const defBtn = def?.querySelector('button');
+	const defImg = defBtn?.querySelector('img');
+	const shareImg = share?.querySelector('button img');
+	const popups = document.querySelectorAll('.popup');
+	buttons.forEach((button) => {
+		button.addEventListener('click', () => {
+			if (window.innerWidth < 768) {
+				if (share?.classList.contains('hidden')) {
+					share?.classList.remove('hidden');
+					share?.classList.add('flex');
+					def?.classList.add('hidden');
+				} else {
+					share?.classList.remove('flex');
+					share?.classList.add('hidden');
+					def?.classList.remove('hidden');
+				}
+			} else {
+				if (defBtn?.classList.contains('bg-gray-500')) {
+					defBtn?.classList.remove('bg-gray-500');
+					defBtn?.removeChild(shareImg);
+					defBtn?.appendChild(defImg);
+					popups.forEach((popup) => {
+						popup.classList.add('hidden');
+					});
+				} else {
+					defBtn?.classList.add('bg-gray-500');
+					defBtn?.removeChild(defImg);
+					defBtn?.appendChild(shareImg);
+					popups.forEach((popup) => {
+						popup.classList.remove('hidden');
+					});
+				}
+			}
+		});
+	});
+</script>
